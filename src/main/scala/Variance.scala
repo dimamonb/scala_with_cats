@@ -14,12 +14,12 @@ object Variance {
 
     val myCatBox: Box[Cat] = new Box[Cat](Cat("Felix"))
     //val myAnimalBox: Box[Animal] = myCatBox - won't compile
-    val myAnimalBox: Box[Animal] = new Box[Dog](Dog("Fido"))
-    val myAnimal: Animal = myAnimalBox.content
+//    val myAnimalBox: Box[Animal] = new Box[Dog](Dog("Fido"))
+//    val myAnimal: Animal = myAnimalBox.content
 
-    myAnimalBox.content = Dog("Fido")
+//    myAnimalBox.content = Dog("Fido")
 
-    val myCat: Cat = myAnimalBox.content
+//    val myCat: Cat = myAnimalBox.content
   }
 
 }
