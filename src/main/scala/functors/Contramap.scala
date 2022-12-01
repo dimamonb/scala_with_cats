@@ -35,7 +35,7 @@ object Printable {
 }
 
 final case class Box[A](value: A)
-object Contramap extends App{
+object Contramap extends App {
   import PrintableInstances._
 
   println(Printable.format("hello"))
