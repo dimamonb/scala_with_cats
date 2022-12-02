@@ -1,6 +1,10 @@
-import cats.{Eval, Functor, Id, Monad}
+import cats.data.Writer
+import cats.syntax.applicative._
 import cats.instances.function._
 import cats.syntax.functor._
+import cats.{Eval, Functor, Id, Monad}
+
+
 val func = (x: Int) => x + 1
 val liftedFunc = Functor[Option].lift(func)
 liftedFunc(Option(1))
@@ -34,4 +38,12 @@ def factorial(n: BigInt): Eval[BigInt] =
     Eval.defer(factorial(n-1).map(_ * n))//n * factorial(n - 1)
   }
 
-factorial(50000).value
+//factorial(50000).value
+
+Writer(Vector(
+  "It was the best of times",
+  "it was the worst of times"
+), 1859)
+
+type Logged[A] = Writer[Vector[String], A]
+123.pure[Logged]
