@@ -1,4 +1,4 @@
-import cats.data.Writer
+import cats.data.{Reader, Writer}
 import cats.syntax.applicative._
 import cats.instances.function._
 import cats.syntax.functor._
@@ -47,3 +47,6 @@ Writer(Vector(
 
 type Logged[A] = Writer[Vector[String], A]
 123.pure[Logged]
+
+final case class Cat(name: String, favoriteFood: String)
+val catName: Reader[Cat, String] =  Reader(cat => cat.name)
